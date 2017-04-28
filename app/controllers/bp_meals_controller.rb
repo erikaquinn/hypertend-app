@@ -1,0 +1,2 @@
+class BpMealsController < ApplicationController
+end

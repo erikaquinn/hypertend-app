@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: MyString
+  sodium: 1
+  calories: 1
+  cholesterol: 1
+  protein: 1
+  potassium: 1
+  sugar: 1
+  meal_id: 1
+  notes: MyString
+  bp_meal_id: 1
+  user_id: 1
+
+two:
+  description: MyString
+  sodium: 1
+  calories: 1
+  cholesterol: 1
+  protein: 1
+  potassium: 1
+  sugar: 1
+  meal_id: 1
+  notes: MyString
+  bp_meal_id: 1
+  user_id: 1

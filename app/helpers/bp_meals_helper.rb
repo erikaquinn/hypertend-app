@@ -1,0 +1,2 @@
+module BpMealsHelper
+end
