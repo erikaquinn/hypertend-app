@@ -1,0 +1,28 @@
+<h1>New Food Item</h1>
+<%= form_tag "/", method: :post do %>
+  <div>
+    Food Item: <input type="text" name="description">
+  </div>
+  <div>
+    Sodium (mg): <input type="text" name="sodium">
+  </div>
+  <div>
+    Calories: <input type="text" name="calories">
+  </div>
+  <div>
+    Cholesterol: <input type="text" name="cholesterol">
+  </div>
+  <div>
+    Protein: <input type="text" name="protein">
+  </div>
+  <div>
+    Potassium: <input type="text" name="potassium">
+  </div>
+  <div>
+    Sugars: <input type="text" name="sugars">
+  </div>
+  <div>
+    Notes: <input type="text" name="sugars">
+  </div>
+  <input type="submit" value="Add Food Item">
+<% end %>

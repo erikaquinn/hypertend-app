@@ -1,24 +1,35 @@
 <h1>Sign up!</h1>
 <%= form_tag '/users', method: :post do  %>
+  <br>
   <div>
-    Name:
-    <input type="text" name="name">
+    First Name:
+    <input type="text" name="first_name">
   </div>
-
+<br>
+  <div>
+    Last Name:
+    <input type="text" name="last_name">
+  </div>
+<br>
   <div>
     Email:
     <input type="email" name="email">
   </div>
-
+<br>
+  <div>
+    Smoker? (Yes/No):
+    <input type="text" name="smoker">
+  </div>
+<br>
   <div>
     Password:
     <input type="password" name="password">
   </div>
-
+<br>
   <div>
     Confirm Password:
     <input type="password" name="password_confirmation">
   </div>
-
+<br>
   <input type="submit" value="Submit">
 <% end %>

@@ -1,0 +1,17 @@
+<div class="row">
+    <% @meals.each do |meal| %>
+      <div class="col-md-8">
+        <div class="well">
+          <h3><a href="/meals/<%= meal.id %>"><%= meal.name %></a></h3>
+          <h4>Date Added: <% meal.created_at %></h4>
+          <h4>Sodium Total: <%= meal.sodium_total %> mgs</h4>
+          <h4>Calories Total: <%= meal.calories_total %></h4>
+          <h4>Cholesterol Total : <%= meal.cholesterol_total %> mgs</h4>
+          <h4>Protein Total: <%= meal.protein_total %> gs</h4>
+          <h4>Potassium Total: <%= meal.potassium_total %> mgs</h4>
+          <h4>Sugars Total: <%= meal.sugar_total%> gs</h4>
+    <% end %>   
+        </div>
+      </div>
+</div>
+  <a href="/meals/1">View nutritional data for meal</a>

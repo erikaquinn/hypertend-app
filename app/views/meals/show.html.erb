@@ -1,0 +1,13 @@
+<h1>Meal Info:</h1>
+<% @meals.each do |meal| %>
+<h2>Meal: <%= meal.name %></h2>
+<h2>Date Added: <% meal.created_at %></h2>
+  <h4>Sodium Total: <%= meal.sodium_total %> mgs</h4>
+  <h4>Calories Total: <%= meal.calories_total %></h4>
+  <h4>Cholesterol Total : <%= meal.cholesterol_total %> mgs</h4>
+  <h4>Protein Total: <%= meal.protein_total %> gs</h4>
+  <h4>Potassium Total: <%= meal.potassium_total %> mgs</h4>
+  <h4>Sugars Total: <%= meal.sugar_total%> gs</h4>
+<% end %>
+
+<a href="/">Back to all food items</a>

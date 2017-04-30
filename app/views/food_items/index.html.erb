@@ -1,1 +1,24 @@
-<h2>Please enter your daily meal:</h2>
+<h2>Here are your daily meals</h2>
+
+<h2>Food Items: </h2>
+  <div class="row">
+    <% @food_items.each do |food_item| %>
+      <div class="col-md-8">
+        <div class="well">
+          <h3><a href="/food_items/<%= food_item.id %>"><%= food_item.description %></a></h3>
+          <h4>Sodium: <%= food_item.sodium %> mg</h4>
+          <h4>Calories: <%= food_item.calories %></h4>
+          <h4>Cholesterol: <%= food_item.cholesterol %> mg</h4>
+          <h4>Protein: <%= food_item.protein %> g</h4>
+          <h4>Potassium: <%= food_item.potassium %> mg</h4>
+          <h4>Sugars: <%= food_item.sugar %> g</h4>
+          <br>
+          <h4>Notes: <%= food_item.notes %></h4>
+    <% end %>
+        </div>
+      </div>
+  </div>
+  <a href="/meals/1">View nutritional data for meal</a>
+
+
+
