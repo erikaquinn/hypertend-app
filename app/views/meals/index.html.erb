@@ -2,7 +2,7 @@
     <% @meals.each do |meal| %>
       <div class="col-md-8">
         <div class="well">
-          <h3><a href="/meals/<%= meal.id %>"><%= meal.name %></a></h3>
+          <h3><%= meal.name %></a></h3>
           <h4>Date Added: <% meal.created_at %></h4>
           <h4>Sodium Total: <%= meal.sodium_total %> mgs</h4>
           <h4>Calories Total: <%= meal.calories_total %></h4>
@@ -14,4 +14,4 @@
         </div>
       </div>
 </div>
-  <a href="/meals/1">View nutritional data for meal</a>
+  <a href="/">Back to food items</a>

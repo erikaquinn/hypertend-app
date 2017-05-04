@@ -1,6 +1,7 @@
 class MealsController < ApplicationController
   def index
-    @meals = Meal.all
+    # @meals = Meal.all
+    @meals = current_user.meals
     render "index.html.erb"
   end
 

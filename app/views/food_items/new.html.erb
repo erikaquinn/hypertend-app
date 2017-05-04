@@ -10,19 +10,26 @@
     Calories: <input type="text" name="calories">
   </div>
   <div>
-    Cholesterol: <input type="text" name="cholesterol">
+    Cholesterol (mg): <input type="text" name="cholesterol">
   </div>
   <div>
-    Protein: <input type="text" name="protein">
+    Protein (g): <input type="text" name="protein">
   </div>
   <div>
-    Potassium: <input type="text" name="potassium">
+    Potassium (mg): <input type="text" name="potassium">
   </div>
   <div>
-    Sugars: <input type="text" name="sugars">
+    Sugars (g): <input type="text" name="sugars">
   </div>
   <div>
-    Notes: <input type="text" name="sugars">
+    Notes: <textarea name="notes" cols="30" rows="10"></textarea>
+  </div>
+  <div>
+    Meal:
+    <% current_user.meals.each do |meal| %>
+      <input type="radio" name="meal_id" value="<%= meal.id %>"> <%= meal.name %>
+    <% end %>
   </div>
   <input type="submit" value="Add Food Item">
 <% end %>
+<a href="/">Back to all food items</a>

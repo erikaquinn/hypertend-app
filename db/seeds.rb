@@ -2,7 +2,7 @@ john = User.create(
     first_name: 'John',
     last_name: 'Abbington', 
     email: 'jabby@email.com',
-    password_digest: 'password', 
+    password: 'password', 
     smoker: 'true'
 )
 
