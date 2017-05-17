@@ -1,7 +1,9 @@
 <head>
+
 <!-- Basic Page Needs -->
 <meta charset="utf-8">
 <title>hypertEND | Sodium Tracker</title>
+
 
 <!-- Favicons-->
 <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
@@ -14,14 +16,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- CSS -->
-<link href="/css/bootstrap.css" rel="stylesheet">
-<link href="/css/style.css" rel="stylesheet">
-<link href="/css/menu.css" rel="stylesheet">
-<link href="/font-awesome/css/font-awesome.css" rel="stylesheet" >
-<link href="/css/socialize-bookmarks.css" rel="stylesheet">
-<link rel="/stylesheet" href="js/fancybox/source/jquery.fancybox.css?v=2.1.4">
-<link href="/css/animate.css" rel="stylesheet">
-<link rel="/stylesheet" href="/css/flexslider.css" type="text/css" media="screen">
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link href="css/menu.css" rel="stylesheet">
+<link href="font-awesome/css/font-awesome.css" rel="stylesheet" >
+<link href="css/socialize-bookmarks.css" rel="stylesheet">
+<link rel="stylesheet" href="js/fancybox/source/jquery.fancybox.css?v=2.1.4">
+<link href="css/animate.css" rel="stylesheet">
 
 <!-- Google web font -->
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800,300' rel='stylesheet' type='text/css'>
@@ -45,16 +46,66 @@
 
 </head>
 
-<h3><%= @food_item.description %></h3>
-  <h4>Sodium: <%= @food_item.sodium %> mg</h4>
-  <h4>Calories: <%= @food_item.calories %></h4>
-  <h4>Cholesterol: <%= @food_item.cholesterol %> mg</h4>
-  <h4>Protein: <%= @food_item.protein %> g</h4>
-  <h4>Potassium: <%= @food_item.potassium %> mg</h4>
-  <h4>Sugars: <%= @food_item.sugar %> g</h4>
-  <br>
-  <h4>Notes: <%= @food_item.notes %></h4>
+<body>
 
- <a href="/food_items/#{@food_item.id}/edit">Edit this food item</a>
- <br>
- <a href="/food_items">Back to all food items</a>
+      <header>
+           <div class="container">
+            <div class="row">
+          <div class="col-md-4 col-xs-3"><h1 id="logo"><a href="/" title="hypertEND | Sodium Tracker">hypertEND | Sodium Tracker</a></h1></div>
+            <nav class="col-md-8 col-xs-9">
+              <ul id="main-nav" class="sf-menu" >
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="#">Training</a>
+                  <ul>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="training-programs.html">Programs</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Calorie calculators</a>
+                <ul>
+                        <li><a href="daily-calorie-calculator.html">Daily calories</a></li>
+                        <li><a href="calories-burned-heart-rate.html">Calories burned by heart rate</a></li>
+                        <li><a href="calories-burned-calculator.html">Calories burned by activites</a></li>
+                        <li><a href="bmi-calculator.html">BMI calculator</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Pages</a>
+                  <ul>
+                      <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="blog_post.html">Single post</a></li>
+                        <li><a href="elements.html">Elements</a></li>
+                        <li><a href="img-galleries.html">Images and galleries</a></li>
+                        <li><a href="media.html">Media</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#">Purchase</a></li>
+                </ul>
+            </nav><!-- End Nav -->
+         </div>
+        </div><!-- End container -->
+        </header> <!-- End header -->
+
+<div class="container">
+  <h3 class="title">Food Item</h3>
+
+  <div class="col-md-6">
+    <h4>Date Added: <%= @food_item.friendly_created_at %></h4>
+    <h3><%= @food_item.description %></h3>
+    <h4>Sodium: <%= @food_item.sodium %> mg</h4>
+    <h4>Calories: <%= @food_item.calories %></h4>
+    <h4>Cholesterol: <%= @food_item.cholesterol %> mg</h4>
+    <h4>Protein: <%= @food_item.protein %> g</h4>
+    <h4>Potassium: <%= @food_item.potassium %> mg</h4>
+    <h4>Sugars: <%= @food_item.sugar %> g</h4>
+    <br>
+    <h4>Notes: <%= @food_item.notes %></h4>
+    <br>
+
+    <h4><%= link_to "Edit this food item", "/food_items/#{@food_item.id}/edit" %></h4>
+    <br>
+    <h4><a href="/food_items">Back to all food items</a></h4>
+  </div>
+  
+</div>

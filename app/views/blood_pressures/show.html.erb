@@ -4,25 +4,18 @@
 <meta charset="utf-8">
 <title>hypertEND | Sodium Tracker</title>
 
-<!-- Favicons-->
-<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
-<link rel="apple-touch-icon" type="image/x-icon" href="img/apple-touch-icon-57x57-precomposed.png">
-<link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="img/apple-touch-icon-72x72-precomposed.png">
-<link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="img/apple-touch-icon-114x114-precomposed.png">
-<link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="img/apple-touch-icon-144x144-precomposed.png">
-
 <!-- Mobile Specific Metas -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- CSS -->
-<link href="/css/bootstrap.css" rel="stylesheet">
-<link href="/css/style.css" rel="stylesheet">
-<link href="/css/menu.css" rel="stylesheet">
-<link href="/font-awesome/css/font-awesome.css" rel="stylesheet" >
-<link href="/css/socialize-bookmarks.css" rel="stylesheet">
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link href="css/menu.css" rel="stylesheet">
+<link href="font-awesome/css/font-awesome.css" rel="stylesheet" >
+<link href="css/socialize-bookmarks.css" rel="stylesheet">
 <link rel="stylesheet" href="js/fancybox/source/jquery.fancybox.css?v=2.1.4">
-<link href="/css/animate.css" rel="stylesheet">
-<link rel="stylesheet" href="/css/flexslider.css" type="text/css" media="screen">
+<link href="css/animate.css" rel="stylesheet">
+<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen">
 
 <!-- Google web font -->
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800,300' rel='stylesheet' type='text/css'>
@@ -31,20 +24,6 @@
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 
-<!-- Jquery -->
-<script src="js/jquery.1.7.2.min.js"></script>
-
-<!-- Support media queries for IE8 -->
-<script src="js/respond.min.js"></script>
-
-<!-- HTML5 and CSS3-in older browsers-->
-<script src="js/modernizr.custom.17475.js"></script>
-
-<!--[if IE 7]>
-  <link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">
-<![endif]-->
-
-
 </head>
 
 <body>
@@ -52,35 +31,32 @@
       <header>
            <div class="container">
             <div class="row">
-          <div class="col-md-4 col-xs-3"><h1 id="logo"><a href="index.html" title="Planar - Personal Trainer">hypertEND | Sodium Tracker</a></h1></div>
+          <div class="col-md-4 col-xs-3"><h1 id="logo"><a href="/" title="hypertEND | Sodium Tracker">hypertEND | Sodium Tracker</a></h1></div>
             <nav class="col-md-8 col-xs-9">
               <ul id="main-nav" class="sf-menu" >
-                <li><a href="profile.html">Profile</a></li>
+                <li><a href="#">Profile</a></li>
                 <li><a href="#">Training</a>
                   <ul>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="training-programs.html">Programs</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Programs</a></li>
                     </ul>
                 </li>
                 <li><a href="#">Calorie calculators</a>
                 <ul>
-                        <li><a href="daily-calorie-calculator.html">Daily calories</a></li>
-                        <li><a href="calories-burned-heart-rate.html">Calories burned by heart rate</a></li>
-                        <li><a href="calories-burned-calculator.html">Calories burned by activites</a></li>
-                        <li><a href="bmi-calculator.html">BMI calculator</a></li>
+                        <li><a href="#">Daily calories</a></li>
+                        <li><a href="#">Calories burned by heart rate</a></li>
+                        <li><a href="#">Calories burned by activites</a></li>
+                        <li><a href="#">BMI calculator</a></li>
                     </ul>
                 </li>
                 <li><a href="#">Pages</a>
                   <ul>
-                      <li><a href="pricing.html">Pricing</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="blog_post.html">Single post</a></li>
-                        <li><a href="elements.html">Elements</a></li>
-                        <li><a href="img-galleries.html">Images and galleries</a></li>
-                        <li><a href="media.html">Media</a></li>
+                      <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Single post</a></li>
                     </ul>
                 </li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#">Contact</a></li>
                 <li><a href="#">Purchase</a></li>
                 </ul>
             </nav><!-- End Nav -->
@@ -88,14 +64,22 @@
         </div><!-- End container -->
         </header> <!-- End header --> 
 
+<div class="container">
+  <h3 class="title">Blood Pressure Reading:</h3>
+    <div class="col-md-6">
+          <h3>Date Added: <%= @blood_pressure.friendly_created_at %></h3>
           <h4>Systolic number: <%= @blood_pressure.systolic_number %></h4>
           <h4>Diastolic number: <%= @blood_pressure.diastolic_number %></h4>
           <h4>Heart Rate: <%= @blood_pressure.bpm %> bpm</h4>
           <h4>Weight: <%= @blood_pressure.weight %> lbs</h4>
           <br>
           <h4>Notes: <%= @blood_pressure.notes %></h4>
+          <br>
  
- <a href="/blood_pressures/#{@blood_pressure.id}/edit">Edit this blood pressure reading</a>
+<h3><%= link_to "Edit this blood pressure reading", "/blood_pressures/#{@blood_pressure.id}/edit" %></h3>
 <br>
- <a href="/blood_pressures">Back to all blood pressures</a>
+<h3><a href="/blood_pressures">Back to all blood pressures</a></h3>
+
+    </div>
+</div>
 

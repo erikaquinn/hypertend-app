@@ -45,40 +45,45 @@
 
 </head>
 
-<h1>Sign up!</h1>
-<%= form_tag '/users', method: :post do  %>
+<div class="container">
+
+  <h3 class="title">Sign Up!</h3>
   <br>
-  <div>
-    First Name:
-    <input type="text" name="first_name">
-  </div>
-<br>
-  <div>
-    Last Name:
-    <input type="text" name="last_name">
-  </div>
-<br>
-  <div>
-    Email:
-    <input type="email" name="email">
-  </div>
-<br>
-  <div>
-    Smoker? (Yes/No):
-    <input type="text" name="smoker">
-  </div>
-<br>
-  <div>
-    Password:
-    <input type="password" name="password">
-  </div>
-<br>
-  <div>
-    Confirm Password:
-    <input type="password" name="password_confirmation">
-  </div>
-<br>
-  <input type="submit" value="Submit">
+    <div class="col-md-6">
+      <%= form_tag '/users', method: :post do  %>
+      <br>
+        <div class="form-bg-1">
+          First Name:
+          <input type="text" name="first_name">
+        </div>
+      <br>
+        <div class="form-bg-2">
+          Last Name:
+          <input type="text" name="last_name">
+        </div>
+      <br>
+        <div class="form-bg-1">
+          Email:
+          <input type="email" name="email">
+        </div>
+      <br>
+        <div class="form-bg-2">
+          Smoker? (Yes/No):
+          <input type="radio" name="smoker" value="yes"> yes
+          <input type="radio" name="smoker" value="no"> no
+        </div>
+      <br>
+        <div class="form-bg-1">
+          Password:
+          <input type="password" name="password">
+        </div>
+      <br>
+        <div class="form-bg-2">
+          Confirm Password:
+          <input type="password" name="password_confirmation">
+        </div>
+      <br>
+        <input type="submit" value="Submit">
 <% end %>
 
  <footer>

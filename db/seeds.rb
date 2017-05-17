@@ -25,16 +25,16 @@ breakfast = Meal.create(
     user_id: john.id
 )
 
-breakfast2 = Meal.create(
-    name: 'Breakfast',
-    sodium_total: '34',
-    calories_total: '260',
-    cholesterol_total: '400',
-    protein_total: '46',
-    potassium_total: '28',
-    sugar_total: '15',
-    user_id: john.id
-)
+# breakfast2 = Meal.create(
+#     name: 'Breakfast',
+#     sodium_total: '34',
+#     calories_total: '260',
+#     cholesterol_total: '400',
+#     protein_total: '46',
+#     potassium_total: '28',
+#     sugar_total: '15',
+#     user_id: john.id
+# )
 
 
 bacon = FoodItem.create(
@@ -46,7 +46,7 @@ bacon = FoodItem.create(
     potassium: '28',
     sugar: '15',
     notes: 'I ate 1/2 slice of bacon',
-    meal_id: breakfast2.id
+    # meal_id: breakfast2.id
 )
 
 eggs = FoodItem.create(
@@ -58,7 +58,7 @@ eggs = FoodItem.create(
     potassium: '15',
     sugar: '30',
     notes: 'Added cheese to eggs',
-    meal_id: breakfast2.id
+    # meal_id: breakfast2.id
 )
 
 toast = FoodItem.create(
@@ -70,7 +70,7 @@ toast = FoodItem.create(
     potassium: '6',
     sugar: '40',
     notes: 'Added blueberry jam',
-    meal_id: breakfast2.id
+    # meal_id: breakfast2.id
 )
 
 cereal = FoodItem.create(
@@ -82,7 +82,7 @@ cereal = FoodItem.create(
     potassium: '8',
     sugar: '25',
     notes: 'With Skim Milk',
-    meal_id: breakfast.id
+    # meal_id: breakfast.id
 )
 
 blood1 = BloodPressure.create(
@@ -106,10 +106,10 @@ blood2 = BloodPressure.create(
     user_id: john.id
 )
 
-bp_meal1 = BPMeal.create(
-    meal_id: 'breakfast.id',
-    blood_pressure_id: 'blood1.id',
-    user_id: 'john.id'
-)
+# bp_meal1 = BPMeal.create(
+#     meal_id: 'breakfast.id',
+#     blood_pressure_id: 'blood1.id',
+#     user_id: 'john.id'
+# )
 
 

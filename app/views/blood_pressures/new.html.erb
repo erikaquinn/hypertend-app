@@ -52,35 +52,32 @@
       <header>
            <div class="container">
             <div class="row">
-          <div class="col-md-4 col-xs-3"><h1 id="logo"><a href="index.html" title="Planar - Personal Trainer">hypertEND | Sodium Tracker</a></h1></div>
+          <div class="col-md-4 col-xs-3"><h1 id="logo"><a href="/" title="hypertEND | Sodium Tracker">hypertEND | Sodium Tracker</a></h1></div>
             <nav class="col-md-8 col-xs-9">
               <ul id="main-nav" class="sf-menu" >
-                <li><a href="profile.html">Profile</a></li>
+                <li><a href="#">Profile</a></li>
                 <li><a href="#">Training</a>
                   <ul>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="training-programs.html">Programs</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Programs</a></li>
                     </ul>
                 </li>
                 <li><a href="#">Calorie calculators</a>
                 <ul>
-                        <li><a href="daily-calorie-calculator.html">Daily calories</a></li>
-                        <li><a href="calories-burned-heart-rate.html">Calories burned by heart rate</a></li>
-                        <li><a href="calories-burned-calculator.html">Calories burned by activites</a></li>
-                        <li><a href="bmi-calculator.html">BMI calculator</a></li>
+                        <li><a href="#">Daily calories</a></li>
+                        <li><a href="#">Calories burned by heart rate</a></li>
+                        <li><a href="#">Calories burned by activites</a></li>
+                        <li><a href="#">BMI calculator</a></li>
                     </ul>
                 </li>
                 <li><a href="#">Pages</a>
                   <ul>
-                      <li><a href="pricing.html">Pricing</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="blog_post.html">Single post</a></li>
-                        <li><a href="elements.html">Elements</a></li>
-                        <li><a href="img-galleries.html">Images and galleries</a></li>
-                        <li><a href="media.html">Media</a></li>
+                      <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Single post</a></li>
                     </ul>
                 </li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#">Contact</a></li>
                 <li><a href="#">Purchase</a></li>
                 </ul>
             </nav><!-- End Nav -->
@@ -88,32 +85,35 @@
         </div><!-- End container -->
         </header> <!-- End header -->
 
-<h1>New Blood Pressure Reading:</h1>
-<%= form_tag "/blood_pressure", method: :post do %>
-  <div>
-    Systolic Number: <input type="text" name="systolic_number">
+<div class="container">
+
+<h3 class="title">New Blood Pressure Reading:</h3>
+<div class="col-md-6">
+<%= form_tag "/blood_pressures", method: :post do %>
+  <div class="form-bg-1">
+    Systolic Number: <input type="number" class="form-control" name="systolic_number">
   </div>
-  <div>
-    Diastolic Number: <input type="text" name="diastolic_number">
+  <div class="form-bg-2">
+    Diastolic Number: <input type="number" class="form-control" name="diastolic_number">
   </div>
-  <div>
-    Heart Rate (bpm): <input type="text" name="bpm">
+  <div class="form-bg-1">
+    Measurement arm: <br>
+    <input type="radio" name="measurement_arm" value="left"> left
+    <input type="radio" name="measurement_arm" value="right"> right
   </div>
-  <div>
-    Weight (lbs): <input type="text" name="weight">
+  <div class="form-bg-2">
+    Heart Rate (bpm): <input type="number" class="form-control" name="bpm">
   </div>
-  <div>
-    Notes: <textarea name="notes" cols="30" rows="10"></textarea>
+  <div class="form-bg-1">
+    Weight (lbs): <input type="number" class="form-control" name="weight">
   </div>
-  <div>
-    Blood Pressures:
-    <% current_user.blood_pressures.each do |blood_pressure| %>
-      <input type="radio" name="blood_pressure_id" value="<%= blood_pressure.id %>"> <%= blood_pressure.id %>
-    <% end %>
+  <div class="form-bg-2">
+    Notes: <textarea name="notes" cols="30" rows="10" class="form-control" placeholder="Enter any notes here."></textarea>
   </div>
-  <input type="submit" value="Add Blood Pressure">
+  <br>
+  <button id="selectBtn" class="button_medium add_top_30" input type="submit">Add Blood Pressure</button>
 <% end %>
 <br>
-<a href="/blood_pressure">Back to all blood pressure readings</a>
+<h4><a href="/blood_pressures">Back to all blood pressure readings</a></h4>
 <br>
-<a href="/food_items">Back to all food items</a>
+<h4><a href="/food_items">Back to all food items</a></h4>

@@ -52,7 +52,7 @@
       <header>
            <div class="container">
             <div class="row">
-          <div class="col-md-4 col-xs-3"><h1 id="logo"><a href="index.html" title="Planar - Personal Trainer">hypertEND | Sodium Tracker</a></h1></div>
+          <div class="col-md-4 col-xs-3"><h1 id="logo"><a href="/" title="Planar - Personal Trainer">hypertEND | Sodium Tracker</a></h1></div>
             <nav class="col-md-8 col-xs-9">
               <ul id="main-nav" class="sf-menu" >
                 <li><a href="profile.html">Profile</a></li>
@@ -88,30 +88,34 @@
         </div><!-- End container -->
         </header> <!-- End header -->
         
+<div class="container">
 
-<h1>Edit Food Item:</h1>
+<h3 class="title">Edit Food Item:</h3>
+<div class="col-md-6">
 <%= form_tag "/food_items/#{@food_item.id}", method: :patch do %>
-  <div>
+  <div class="form-bg-1">
    Description: <input type="text" class="form-control" value="<%= @food_item.description %>" name="description">
   </div>
-  <div>
-    Sodium: <input type="text" class="form-control" value="<%= @food_item.sodium %>" name="sodium">
+  <div class="form-bg-2">
+    Sodium: <input type="number" class="form-control" value="<%= @food_item.sodium %>" name="sodium">
   </div>
-  <div>
-    Calories: <input type="text" class="form-control" value="<%= @food_item.calories %>" name="calories">
+  <div class="form-bg-1">
+    Calories: <input type="number" class="form-control" value="<%= @food_item.calories %>" name="calories">
   </div>
-  <div>
-    Cholesterol: <input type="text" class="form-control" value="<%= @food_item.cholesterol %>" name="cholesterol">
+  <div class="form-bg-2">
+    Cholesterol: <input type="number" class="form-control" value="<%= @food_item.cholesterol %>" name="cholesterol">
   </div>
-  <div>
-    Potassium: <input type="text" class="form-control" value="<%= @food_item.potassium %>" name="potassium">
+  <div class="form-bg-1">
+    Potassium: <input type="number" class="form-control" value="<%= @food_item.potassium %>" name="potassium">
   </div>
-  <div>
-    Sugars: <input type="text" class="form-control" value="<%= @food_item.sugar %>" name="sugars">
+  <div class="form-bg-2">
+    Sugars: <input type="number" class="form-control" value="<%= @food_item.sugar %>" name="sugars">
   </div>
-  <div>
+  <div class="form-bg-1">
     Notes: <input type="text" class="form-control" value="<%= @food_item.notes %>" name="notes">
   </div>
-  
-  <input type="submit" class="btn btn-default" value="Update food item">
+  <br>
+  <button id="selectBtn" class="button_medium add_top_30" input type="submit">Update Food Item</button>
 <% end %>
+</div>
+</div>

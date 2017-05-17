@@ -52,35 +52,33 @@
       <header>
            <div class="container">
             <div class="row">
-          <div class="col-md-4 col-xs-3"><h1 id="logo"><a href="index.html" title="Planar - Personal Trainer">hypertEND | Sodium Tracker</a></h1></div>
+          <div class="col-md-4 col-xs-3"><h1 id="logo"><a href="/" title="Planar - Personal Trainer">hypertEND | Sodium Tracker</a></h1></div>
             <nav class="col-md-8 col-xs-9">
               <ul id="main-nav" class="sf-menu" >
                 <li><a href="profile.html">Profile</a></li>
                 <li><a href="#">Training</a>
                   <ul>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="training-programs.html">Programs</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Programs</a></li>
                     </ul>
                 </li>
                 <li><a href="#">Calorie calculators</a>
                 <ul>
-                        <li><a href="daily-calorie-calculator.html">Daily calories</a></li>
-                        <li><a href="calories-burned-heart-rate.html">Calories burned by heart rate</a></li>
-                        <li><a href="calories-burned-calculator.html">Calories burned by activites</a></li>
-                        <li><a href="bmi-calculator.html">BMI calculator</a></li>
+                        <li><a href="#">Daily calories</a></li>
+                        <li><a href="#">Calories burned by heart rate</a></li>
+                        <li><a href="#">Calories burned by activites</a></li>
+                        <li><a href="#">BMI calculator</a></li>
                     </ul>
                 </li>
                 <li><a href="#">Pages</a>
                   <ul>
-                      <li><a href="pricing.html">Pricing</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="blog_post.html">Single post</a></li>
-                        <li><a href="elements.html">Elements</a></li>
-                        <li><a href="img-galleries.html">Images and galleries</a></li>
-                        <li><a href="media.html">Media</a></li>
+                      <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Single post</a></li>
+                        <li><a href="#">Elements</a></li>
                     </ul>
                 </li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#">Contact</a></li>
                 <li><a href="#">Purchase</a></li>
                 </ul>
             </nav><!-- End Nav -->
@@ -88,27 +86,34 @@
         </div><!-- End container -->
         </header> <!-- End header -->
 
-<h2>Here are your blood pressure readings</h2>
+<div class="container">
+
+<h3 class="title">Here are your blood pressure readings</h3>
+<div class="col-md-6">
 <br>
 <h2>BP Readings: </h2>
 <br>
-<h3><a href="/blood_pressures">View blood pressure data</a></h3>
   <div class="row">
     <% @blood_pressures.each do |blood_pressure| %>
-      <div class="col-md-8">
-        <div class="well">
-          <h3><a href="/blood_pressures/<%= blood_pressure.id %>"><%= blood_pressure.id %></a></h3>
+      <div class="col-md-12">
+      
+          <h3><a href="/blood_pressures/<%= blood_pressure.id %>"><%= blood_pressure.friendly_created_at %></a></h3>
+          <h4>Date Added: <%= blood_pressure.friendly_created_at %></h4>
           <h4>Systolic number: <%= blood_pressure.systolic_number %></h4>
           <h4>Diastolic number: <%= blood_pressure.diastolic_number %></h4>
           <h4>Heart Rate: <%= blood_pressure.bpm %> bpm</h4>
           <h4>Weight: <%= blood_pressure.weight %> lbs</h4>
           <br>
           <h4>Notes: <%= blood_pressure.notes %></h4>
+        <br>
     <% end %>
-        </div>
+        <!-- </div> -->
       </div>
   </div>
-  <h3><a href="/blood_pressures/new">Enter a new Blood Pressure reading</a></h3>
-
+<div class="row add_top_15">
+<br>
+<br>
+<h4><a href="/blood_pressures/new">Enter a new Blood Pressure reading</a></h4>
+</div>
 
 

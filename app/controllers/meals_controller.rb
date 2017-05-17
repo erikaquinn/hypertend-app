@@ -5,9 +5,9 @@ class MealsController < ApplicationController
   end
 
   def show
-    @meals = Meal.all
+    @meal = Meal.all
     meal_id = params[:id]
-    @meals = Meal.find_by(id: meal_id)
+    @meal = Meal.find_by(id: meal_id)
     render "show.html.erb"
   end
 end
