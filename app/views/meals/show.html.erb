@@ -31,19 +31,6 @@
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 
-<!-- Jquery -->
-<script src="js/jquery.1.7.2.min.js"></script>
-
-<!-- Support media queries for IE8 -->
-<script src="js/respond.min.js"></script>
-
-<!-- HTML5 and CSS3-in older browsers-->
-<script src="js/modernizr.custom.17475.js"></script>
-
-<!--[if IE 7]>
-  <link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">
-<![endif]-->
-
 </head>
 
 <body>
@@ -93,7 +80,6 @@
 <div class="col-md-6">
 
 <h2>Meal: <%= @meal.name %></h2>
-<h2>Date Added: <% @meal.friendly_created_at %></h2>
   <h4>Sodium Total: <%= @meal.sodium_total %> mg</h4>
   <h4>Calories Total: <%= @meal.calories_total %></h4>
   <h4>Cholesterol Total : <%= @meal.cholesterol_total %> mg</h4>

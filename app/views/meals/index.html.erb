@@ -31,18 +31,6 @@
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 
-<!-- Jquery -->
-<script src="js/jquery.1.7.2.min.js"></script>
-
-<!-- Support media queries for IE8 -->
-<script src="js/respond.min.js"></script>
-
-<!-- HTML5 and CSS3-in older browsers-->
-<script src="js/modernizr.custom.17475.js"></script>
-
-<!--[if IE 7]>
-  <link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">
-<![endif]-->
 
 
 </head>
@@ -92,8 +80,6 @@
 
 <div class="row">
     <% @meals.each do |meal| %>
-      <!-- <div class="col-md-8"> -->
-       <!--  <div class="well"> -->
           <h3><h4><a href="/meals/<%= meal.id %>"><%= meal.name %></a></h3>
           <h4>Date Added: <%= meal.friendly_created_at %></h6></h4>
           <h4>Sodium Total: <%= meal.sodium_total %> mgs</h4>

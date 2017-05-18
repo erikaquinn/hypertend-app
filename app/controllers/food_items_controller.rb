@@ -27,10 +27,10 @@ class FoodItemsController < ApplicationController
     meal = Meal.where(:name => params[:meal_name], :created_at => (Time.zone.now.beginning_of_day..Time.zone.now.end_of_day)).first
 
     if meal
-      # If we find the meal we insert the meal.id into food_item and save
+      # If the meal is found, insert the meal.id into food_item and save
       food_item[:meal_id] = meal.id
 
-      # We then update the meal's totals using the food_item's params
+      # Then update the meal's totals using the food_item's params
       meal.update(
         sodium_total:      meal.sodium_total + params[:sodium].to_i,
         calories_total:    meal.calories_total + params[:calories].to_i,

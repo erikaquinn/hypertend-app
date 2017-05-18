@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   get "/blood_pressures/:id/edit" => "blood_pressures#edit"
   patch "/blood_pressures/:id" => "blood_pressures#update"
 
+  get "/data" => "data#index"
+
   get "/signup" => "users#new"
   post "/users" => "users#create"
 
