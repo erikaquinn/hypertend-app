@@ -67,36 +67,20 @@
         </header> <!-- End header -->
 
 <div class="container">
+ <h3 class="title">Here are your graphs</h3>
+  <div class="col-md-6">
+    <p><%= @date_range %></p>
+    <br>
 
-<h3 class="title">Here are your blood pressure readings</h3>
-<div class="col-md-6">
-<br>
-<h2>BP Readings: </h2>
-<br>
-<h4><a href="/blood_pressures/new">Enter a new Blood Pressure reading</a></h4>
-<br>
-  <div class="row">
-    <% @blood_pressures.each do |blood_pressure| %>
-      <div class="col-md-12">
-      
-          <h3><a href="/blood_pressures/<%= blood_pressure.id %>"><%= blood_pressure.friendly_created_at %></a></h3>
-          <h4>Date Added: <%= blood_pressure.friendly_created_at %></h4>
-          <h4>Systolic number: <%= blood_pressure.systolic_number %></h4>
-          <h4>Diastolic number: <%= blood_pressure.diastolic_number %></h4>
-          <h4>Heart Rate: <%= blood_pressure.bpm %> bpm</h4>
-          <h4>Weight: <%= blood_pressure.weight %> lbs</h4>
-          <br>
-          <h4>Notes: <%= blood_pressure.notes %></h4>
-        <br>
-    <% end %>
-    <%= column_chart BloodPressure.group_by_day_of_week(:created_at, format: "%a").count %>
-        <!-- </div> -->
-      </div>
+    <%= column_chart Meal.where(user_id: current_user.id).where('created_at >= ?', 1.week.ago).group_by_day_of_week(:created_at, format: "%a").sum(:sodium_total), ytitle: "Sodium", xtitle: "Day of Week" %>
 
-<div class="row add_top_15">
-<br>
-<br>
+    <br>
 
+    <%= pie_chart Meal.where(user_id: current_user.id).group(:name).count %>
+
+    <br>
+
+    <%= line_chart Meal.group(:name).group_by_week(:created_at).count %>
+
+  </div>
 </div>
-
-
