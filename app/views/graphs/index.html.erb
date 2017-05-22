@@ -72,7 +72,7 @@
     <p><%= @date_range %></p>
     <br>
 
-    <%= column_chart Meal.where(user_id: current_user.id).where('created_at >= ?', 1.week.ago).group_by_day_of_week(:created_at, format: "%a").sum(:sodium_total), ytitle: "Sodium", xtitle: "Day of Week" %>
+    <%= column_chart @user_meals, ytitle: "Sodium", xtitle: "Day of Week" %>
 
     <br>
 
@@ -80,7 +80,9 @@
 
     <br>
 
-    <%= line_chart Meal.group(:name).group_by_week(:created_at).count %>
+    <%= line_chart @bp_data.map { |hash|
+        {name: hash[:name], data: hash[:data]}
+    } %>
 
   </div>
 </div>

@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  get "/" => "food_items#index"
-  get "/food_items" => "food_items#index"
+  # get "/" => "main#index"
+  root "main#index"
 
+  get "/food_items" => "food_items#index"
   get "/food_items/new" => "food_items#new"
   post "/food_items" => "food_items#create"
   get "/food_items/:id" => "food_items#show"
