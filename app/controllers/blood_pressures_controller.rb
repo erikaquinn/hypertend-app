@@ -1,7 +1,12 @@
 class BloodPressuresController < ApplicationController
 
   def index
-    @blood_pressures = BloodPressure.all
+
+    sort_attribute = params[:sort_by] || "created_at"
+    sort_attribute_order = params[:sort_order] || "desc"
+
+    @blood_pressures = BloodPressure.all.order(sort_attribute => sort_attribute_order)
+  
     render "index.html.erb"
   end
 

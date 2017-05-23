@@ -1,6 +1,11 @@
 class MealsController < ApplicationController
   def index
-    @meals = Meal.all
+
+    sort_attribute = params[:sort_by] || "created_at"
+    sort_attribute_order = params[:sort_order] || "desc"
+
+    @meals = Meal.all.order(sort_attribute => sort_attribute_order)
+    
     render "index.html.erb"
   end
 

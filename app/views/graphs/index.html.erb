@@ -29,60 +29,71 @@
 
 <body>
 
-      <header>
-           <div class="container">
-            <div class="row">
-          <div class="col-md-4 col-xs-3"><h1 id="logo"><a href="/" title="Planar - Personal Trainer">hypertEND | Sodium Tracker</a></h1></div>
-            <nav class="col-md-8 col-xs-9">
-              <ul id="main-nav" class="sf-menu" >
-                <li><a href="profile.html">Profile</a></li>
-                <li><a href="#">Training</a>
-                  <ul>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Programs</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Calorie calculators</a>
-                <ul>
-                        <li><a href="#">Daily calories</a></li>
-                        <li><a href="#">Calories burned by heart rate</a></li>
-                        <li><a href="#">Calories burned by activites</a></li>
-                        <li><a href="#">BMI calculator</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Pages</a>
-                  <ul>
-                      <li><a href="#">Pricing</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Single post</a></li>
-                        <li><a href="#">Elements</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Purchase</a></li>
-                </ul>
-            </nav><!-- End Nav -->
-         </div>
-        </div><!-- End container -->
-        </header> <!-- End header -->
+  <header>
+   <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-xs-3"><h1 id="logo">
+        <a href="/" title="Planar - Personal Trainer">hypertEND | Sodium Tracker</a></h1>
+      </div>
+    <nav class="col-md-8 col-xs-9">
+      <ul id="main-nav" class="sf-menu" >
+      <ul>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Programs</a></li>
+      </ul>
+        </li>
+        <li><a href="#">Calorie calculators</a>
+        <ul>
+            <li><a href="#">Daily calories</a></li>
+            <li><a href="#">Calories burned by heart rate</a></li>
+            <li><a href="#">Calories burned by activites</a></li>
+            <li><a href="#">BMI calculator</a></li>
+        </ul>
+        </li>
+        <li><a href="#">Pages</a>
+          <ul>
+            <li><a href="#">Pricing</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Single post</a></li>
+              <li><a href="#">Elements</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Purchase</a></li>
+        </ul>
+        </nav><!-- End Nav -->
+     </div>
+    </div><!-- End container -->
+    </header> <!-- End header -->
 
 <div class="container">
- <h3 class="title">Here are your graphs</h3>
+ <h3 class="title">Here is your data</h3>
   <div class="col-md-6">
-    <p><%= @date_range %></p>
-    <br>
+          <h3>Sodium Totals for the Week</h3>
+          <p><%= @date_range %></p>
+          <br>
 
-    <%= column_chart @user_meals, ytitle: "Sodium", xtitle: "Day of Week" %>
+          <%= column_chart @user_meals, ytitle: "Sodium", xtitle: "Day of Week" %>
 
-    <br>
-
-    <%= pie_chart Meal.where(user_id: current_user.id).group(:name).count %>
-
-    <br>
-
-    <%= line_chart @bp_data.map { |hash|
-        {name: hash[:name], data: hash[:data]}
-    } %>
-
+          <br>
   </div>
+  <div class="col-md-6">
+  <h3>Sodium Totals per Daily Meal</h3>
+        
+            <%= pie_chart Meal.where(user_id: current_user.id).group(:name).count %>
+      
+            <br>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+    <br>
+    <br>
+    <br>
+<h3>Daily Blood Pressure Readings</h3>
+
+            <%= line_chart @bp_data.map { |hash|
+                {name: hash[:name], data: hash[:data]}
+            }, ytitle: "mmHg", xtitle: "Day of Week" %>
+          
+    </div>
 </div>

@@ -520,6 +520,7 @@ input[type="checkbox"]:checked + label span {
 }
 input[type="radio"] {
     display:inline-block;
+    margin-left: 20px;
 }
 input[type="radio"] + label span {
     display:inline-block;

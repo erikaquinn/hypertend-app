@@ -1,85 +1,92 @@
 <head>
 
-<!-- Basic Page Needs -->
-<meta charset="utf-8">
-<title>hypertEND | Sodium Tracker</title>
+  <!-- Basic Page Needs -->
+  <meta charset="utf-8">
+  <title>hypertEND | Sodium Tracker</title>
 
-<!-- Mobile Specific Metas -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Mobile Specific Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- CSS -->
-<link href="css/bootstrap.css" rel="stylesheet">
-<link href="css/style.css" rel="stylesheet">
-<link href="css/menu.css" rel="stylesheet">
-<link href="font-awesome/css/font-awesome.css" rel="stylesheet" >
-<link href="css/socialize-bookmarks.css" rel="stylesheet">
-<link rel="stylesheet" href="js/fancybox/source/jquery.fancybox.css?v=2.1.4">
-<link href="css/animate.css" rel="stylesheet">
-<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen">
+  <!-- CSS -->
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/menu.css" rel="stylesheet">
+  <link href="font-awesome/css/font-awesome.css" rel="stylesheet" >
+  <link href="css/socialize-bookmarks.css" rel="stylesheet">
+  <link rel="stylesheet" href="js/fancybox/source/jquery.fancybox.css?v=2.1.4">
+  <link href="css/animate.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen">
 
-<!-- Google web font -->
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800,300' rel='stylesheet' type='text/css'>
+  <!-- Google web font -->
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800,300' rel='stylesheet' type='text/css'>
 
-<!--[if lt IE 9]>
-<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
 
 
 </head>
 
 <body>
-
-      <header>
-           <div class="container">
-            <div class="row">
-          <div class="col-md-4 col-xs-3"><h1 id="logo"><a href="/" title="Planar - Personal Trainer">hypertEND | Sodium Tracker</a></h1></div>
-            <nav class="col-md-8 col-xs-9">
-              <ul id="main-nav" class="sf-menu" >
-                <li><a href="profile.html">Profile</a></li>
-                <li><a href="#">Training</a>
-                  <ul>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Programs</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Calorie calculators</a>
-                <ul>
-                        <li><a href="#">Daily calories</a></li>
-                        <li><a href="#">Calories burned by heart rate</a></li>
-                        <li><a href="#">Calories burned by activites</a></li>
-                        <li><a href="#">BMI calculator</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Pages</a>
-                  <ul>
-                      <li><a href="#">Pricing</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Single post</a></li>
-                        <li><a href="#">Elements</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Purchase</a></li>
-                </ul>
-            </nav><!-- End Nav -->
-         </div>
-        </div><!-- End container -->
-        </header> <!-- End header -->
+</body>
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-xs-3">
+        <h1 id="logo">
+          <a href="/" title="Planar - Personal Trainer">hypertEND | Sodium Tracker</a>
+        </h1>
+      </div>
+      
+      <nav class="col-md-8 col-xs-9">
+        <ul id="main-nav" class="sf-menu" >
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="#">Training</a>
+            <ul>
+                  <li><a href="#">Services</a></li>
+                  <li><a href="#">Programs</a></li>
+              </ul>
+          </li>
+          <li><a href="#">Calorie calculators</a>
+          <ul>
+                  <li><a href="#">Daily calories</a></li>
+                  <li><a href="#">Calories burned by heart rate</a></li>
+                  <li><a href="#">Calories burned by activites</a></li>
+                  <li><a href="#">BMI calculator</a></li>
+              </ul>
+          </li>
+          <li><a href="#">Pages</a>
+            <ul>
+                <li><a href="#">Pricing</a></li>
+                  <li><a href="#">Blog</a></li>
+                  <li><a href="#">Single post</a></li>
+                  <li><a href="#">Elements</a></li>
+              </ul>
+          </li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Purchase</a></li>
+          </ul>
+      </nav><!-- End Nav -->
+    </div>
+  </div><!-- End container -->
+</header> <!-- End header -->
 
 <div class="container">
 
-<h3 class="title">Here are your blood pressure readings</h3>
-<div class="col-md-6">
-<br>
-<h2>BP Readings: </h2>
-<br>
-<h4><a href="/blood_pressures/new">Enter a new Blood Pressure reading</a></h4>
-<br>
-  <div class="row">
-    <% @blood_pressures.each do |blood_pressure| %>
-      <div class="col-md-12">
-      
-          <h3><a href="/blood_pressures/<%= blood_pressure.id %>"><%= blood_pressure.friendly_created_at %></a></h3>
+    <h3 class="title">Your blood pressure readings</h3>
+  <div class="col-md-12">
+      <br>
+      <h2>BP Readings: </h2>
+      <br>
+      <h4><a href="/blood_pressures/new">Enter a new Blood Pressure reading</a></h4>
+      <br>
+  </div>
+  
+    <div class="row">
+      <% @blood_pressures.each do |blood_pressure| %>
+        <div class="col-md-12">
+          <h3><a href="/blood_pressures/<%= blood_pressure.id %>">
+          <h4><%= blood_pressure.friendly_created_at %></a></h4>
           <h4>Date Added: <%= blood_pressure.friendly_created_at %></h4>
           <h4>Systolic number: <%= blood_pressure.systolic_number %></h4>
           <h4>Diastolic number: <%= blood_pressure.diastolic_number %></h4>
@@ -87,16 +94,16 @@
           <h4>Weight: <%= blood_pressure.weight %> lbs</h4>
           <br>
           <h4>Notes: <%= blood_pressure.notes %></h4>
+          <br>
+        </div>
+      <% end %>
+    </div>
+
+      <div class="row add_top_15">
         <br>
-    <% end %>
-    <%= column_chart BloodPressure.group_by_day_of_week(:created_at, format: "%a").count %>
-        <!-- </div> -->
+        <br>
       </div>
-
-<div class="row add_top_15">
-<br>
-<br>
-
 </div>
+
 
 

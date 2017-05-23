@@ -72,88 +72,53 @@
         </div><!-- End container -->
     </header> <!-- End header -->
         
-       <div class="container">
+    <div class="container">
+        <% if current_user %>
+            <h3>Welcome <%= current_user.first_name %>!</h3>
+        <% end %>
+        <br>
             
-            <div class="row">
+        <div class="row">
+            <div class="col-md-4 col-sm-6">
+                <div class="box_calculator">
+                    <a href="/food_items/new">
+                    <img src="img/icon-3.png" alt="">
+                    <h3>Meals</h3>
+                    </a>
+                </div><!-- End meals icon-->
+            </div> <!-- End col-md-3 -->
             
-                <div class="col-md-3 col-sm-6">
-                    <div class="box_calculator">
-                        <a href="/food_items/new">
-                        <img src="img/icon-3.png" alt="">
-                        <h3>Meals</h3>
-                        </a>
-                    </div><!-- End box-calculator-->
-                </div> <!-- End col-md-3 -->
-                
-                <div class="col-md-3 col-sm-6">
-                    <div class="box_calculator">
-                        <a href="/food_items/new">
-                        <img src="img/icon-4.png" alt="">
-                        <h3>Snacks</h3>
-                        </a>
-                    </div> <!-- End box-calculator -->
-                </div><!-- End col-md-3 -->
-                
-                <div class="col-md-3 col-sm-6">
-                    <div class="box_calculator">
-                        <a href="/blood_pressures">
-                        <img src="img/icon-8.png" alt="">
-                        <h3>Blood Pressure</h3>
-                        </a>
-                    </div><!-- End box-calculator-->
-                    </div> <!-- End col-md-3 -->
+            <!-- <div class="col-md-3 col-sm-6">
+                <div class="box_calculator">
+                    <a href="/food_items/new">
+                    <img src="img/icon-4.png" alt="">
+                    <h3>Snacks</h3>
+                    </a> -->
+                <!-- </div> --> <!-- End box-calculator -->
+            <!-- </div> --><!-- End col-md-3 -->
+            
+            <div class="col-md-4 col-sm-6">
+                <div class="box_calculator">
+                    <a href="/blood_pressures">
+                    <img src="img/icon-8.png" alt="">
+                    <h3>Blood Pressure</h3>
+                    </a>
+                </div><!-- End blood pressure icon-->
+            </div> <!-- End col-md-3 -->
 
-                <div class="col-md-3 col-sm-6">
-                    <div class="box_calculator">
-                        <a href="/graphs">
-                        <img src="img/icon-7.png" alt="">
-                        <h3>Data</h3>
-                        </a>
-                    </div><!-- End box-calculator-->
-                    </div> <!-- End col-md-3 -->
-                
-            </div> <!--End row -->
+            <div class="col-md-4 col-sm-6">
+                <div class="box_calculator">
+                    <a href="/graphs">
+                    <img src="img/icon-7.png" alt="">
+                    <h3>Data</h3>
+                    </a>
+                </div><!-- End data iconr-->
+            </div> <!-- End col-md-3 -->
+        </div> <!--End row -->
+    </div>
  
-        <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h5>Contacts</h5>
-                    <p>
-                        Our mission is to bring affordable Technology education to people everywhere, in order to help them achieve their dreams and change the world. to bring affordable Technology education to people everywhere, in order to help them achieve their dreams and change the world.
-                    </p>
-                    <ul>
-                        <li><i class="icon-user"></i> Personal trainer Name</li>
-                        <li><i class="icon-phone"></i> Telephone: 41.22.319.36.10 </li>
-                        <li><i class="icon-envelope"></i> Email: <a href="#">info@planar.com </a></li>
-                        <li><i class="icon-skype"></i> Skype name: Planar</li>
-                    </ul>
-                    <ul class="social-bookmarks clearfix">
-                        <li class="linkedin"><a href="#">behance</a></li>
-                        <li class="facebook"><a href="#">facebook</a></li>
-                        <li class="googleplus"><a href="#">googleplus</a></li>
-                        <li class="twitter"><a href="#">twitter</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-6">
-                    <h5 class="add_bottom_15">Suggest this site to a friend</h5>
-                    <div id="message-friend"></div>
-                    <form method="post" action="assets/send_to_friend.php" id="contactfriend">
-                        <div class="form-bg-1"><input type="text" id="name_footer" class="form-control" placeholder="Your name*"></div>
-                        <div class="form-bg-2"><input type="text" id="friendname_footer" class="form-control" placeholder="Your friend name*"></div>
-                        <div class="form-bg-1"><input type="email" id="friendemail_footer" class="form-control" placeholder="Your friend email*"></div>
-                        <div class="form-bg-2"><textarea rows="3" id="message_footer" class="form-control" placeholder="Message*"></textarea></div>
-                        <div class="form-bg-1"><input type="text" id="verify_footer" class="form-control" placeholder="Are you human? 3 + 1 ="></div>
-                        <input type="submit" id="submit-friend" value="Submit" class=" button_medium add_top_30">
-                    </form>
-                </div>
-            </div>
-        </div>
-        <div id="copy">© 2017 - All Rights Reserved</div>
-        </footer><!-- End footer -->
  
- <div id="toTop">Back to Top</div>  
+     <div id="toTop">Back to Top</div>  
  
-
 </body>
 </html>

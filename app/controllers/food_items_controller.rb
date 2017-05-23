@@ -1,7 +1,12 @@
 class FoodItemsController < ApplicationController
   def index
-    @food_items = FoodItem.all
-    render "index.html.erb"
+
+    sort_attribute = params[:sort_by] || "created_at"
+    sort_attribute_order = params[:sort_order] || "desc"
+
+    @food_items = FoodItem.all.order(sort_attribute => sort_attribute_order)
+
+    render "index.html.erb" 
   end
 
   def show
