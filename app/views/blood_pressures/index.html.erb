@@ -27,14 +27,12 @@
 
 </head>
 
-<body>
-</body>
 <header>
   <div class="container">
     <div class="row">
       <div class="col-md-4 col-xs-3">
         <h1 id="logo">
-          <a href="/" title="Planar - Personal Trainer">hypertEND | Sodium Tracker</a>
+          <a href="/" title="hypertEND | Sodium Tracker">hypertEND | Sodium Tracker</a>
         </h1>
       </div>
       
@@ -80,11 +78,52 @@
       <br>
       <h4><a href="/blood_pressures/new">Enter a new Blood Pressure reading</a></h4>
       <br>
+      <br>
+  <div class="col-md-12">
+        <h4>Blood Pressure Chart</h4>
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th style="width:35%">Top number (systolic) in mm Hg</th>
+                  <th style="width:35%">Bottom number (diastolic) in mm Hg</th>
+                  <th style="width:30%">Your category*</th>
+                </tr>
+              </thead>
+                <tbody>
+                  <tr>
+                    <td>Below 120</td>
+                    <td>and Below 80</td>
+                    <td>Normal blood pressure</td>
+                  </tr>
+                    <tr>
+                      <td>Between 120-139</td>
+                      <td>or Between 80-89</td>
+                      <td>Prehypertension</td>
+                    </tr>
+                      <tr>
+                        <td>Between 140-159</td>
+                        <td>or Between 90-99</td>
+                        <td>Stage 1 hypertension</td>
+                      </tr>
+                        <tr>
+                          <td>160 or higher</td>
+                          <td>or 100 or higher</td>
+                          <td>Stage 2 hypertension</td>
+                        </tr>
+                </tbody>
+            </table> <!-- End table responsive -->
+            <br>
+            <br>
+          </div>    
+      </div>
   </div>
+  <br>
+  <br>
   
     <div class="row">
       <% @blood_pressures.each do |blood_pressure| %>
-        <div class="col-md-12">
+        <div class="col-md-6">
           <h3><a href="/blood_pressures/<%= blood_pressure.id %>">
           <h4><%= blood_pressure.friendly_created_at %></a></h4>
           <h4>Date Added: <%= blood_pressure.friendly_created_at %></h4>
@@ -99,10 +138,9 @@
       <% end %>
     </div>
 
-      <div class="row add_top_15">
-        <br>
-        <br>
-      </div>
+      
+          <div class="row add_top_15">
+          </div>           
 </div>
 
 

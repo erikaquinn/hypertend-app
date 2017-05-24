@@ -1,28 +1,28 @@
 <head>
 
-<!-- Basic Page Needs -->
-<meta charset="utf-8">
-<title>hypertEND | Sodium Tracker</title>
+  <!-- Basic Page Needs -->
+  <meta charset="utf-8">
+  <title>hypertEND | Sodium Tracker</title>
 
-<!-- Mobile Specific Metas -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Mobile Specific Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- CSS -->
-<link href="css/bootstrap.css" rel="stylesheet">
-<link href="css/style.css" rel="stylesheet">
-<link href="css/menu.css" rel="stylesheet">
-<link href="font-awesome/css/font-awesome.css" rel="stylesheet" >
-<link href="css/socialize-bookmarks.css" rel="stylesheet">
-<link rel="stylesheet" href="js/fancybox/source/jquery.fancybox.css?v=2.1.4">
-<link href="css/animate.css" rel="stylesheet">
-<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen">
+  <!-- CSS -->
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/menu.css" rel="stylesheet">
+  <link href="font-awesome/css/font-awesome.css" rel="stylesheet" >
+  <link href="css/socialize-bookmarks.css" rel="stylesheet">
+  <link rel="stylesheet" href="js/fancybox/source/jquery.fancybox.css?v=2.1.4">
+  <link href="css/animate.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen">
 
-<!-- Google web font -->
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800,300' rel='stylesheet' type='text/css'>
+  <!-- Google web font -->
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800,300' rel='stylesheet' type='text/css'>
 
-<!--[if lt IE 9]>
-<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
 
 
 </head>
@@ -62,9 +62,9 @@
         <li><a href="#">Purchase</a></li>
         </ul>
         </nav><!-- End Nav -->
-     </div>
-    </div><!-- End container -->
-    </header> <!-- End header -->
+    </div>
+   </div><!-- End container -->
+  </header> <!-- End header -->
 
 <div class="container">
  <h3 class="title">Here is your data</h3>
@@ -77,23 +77,24 @@
 
           <br>
   </div>
-  <div class="col-md-6">
-  <h3>Sodium Totals per Daily Meal</h3>
-        
-            <%= pie_chart Meal.where(user_id: current_user.id).group(:name).count %>
-      
-            <br>
-  </div>
-  <div class="row">
-    <div class="col-md-12">
-    <br>
-    <br>
-    <br>
-<h3>Daily Blood Pressure Readings</h3>
 
-            <%= line_chart @bp_data.map { |hash|
-                {name: hash[:name], data: hash[:data]}
-            }, ytitle: "mmHg", xtitle: "Day of Week" %>
+    <div class="col-md-6">
+      <h3 align="center">Sodium Totals per Daily Meal</h3>
           
+              <%= pie_chart Meal.where(user_id: current_user.id).group(:name).count %>
+        
+              <br>
     </div>
+      <div class="row">
+        <div class="col-md-12">
+          <br>
+          <br>
+          <br>
+            <h3>Daily Blood Pressure Readings</h3>
+
+              <%= line_chart @bp_data.map { |hash|
+                  {name: hash[:name], data: hash[:data]}
+              }, ytitle: "mmHg", xtitle: "Day of Week" %> 
+        </div>             
+      </div>
 </div>

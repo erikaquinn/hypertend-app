@@ -296,6 +296,15 @@ footer .form-bg-1, footer .form-bg-2 {
 	padding:50px 20px 60px 20px;
 	margin-bottom:30px;
 }
+.tips_box {
+  background-color:#7accc8;
+  color:#fff;
+  text-align:center;
+  font-size:16px;
+  font-weight:400;
+  padding:40px 10px 50px 10px;
+  margin-bottom:20px;
+}
 .box_calculator a{
 	background-color:#8dc63f ;
 	padding:20px 20px 5px 20px;
