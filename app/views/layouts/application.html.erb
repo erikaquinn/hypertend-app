@@ -32,6 +32,43 @@
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 
+<header>
+    <div class="container">
+        <div class="row">
+           <div class="col-md-4 col-xs-3"><h1 id="logo"><a href="/" title="hypertEND | Sodium Tracker">hypertEND | Sodium Tracker</a></h1>
+           </div>
+            <nav class="col-md-8 col-xs-9">
+            <ul id="main-nav" class="sf-menu">
+                <% if current_user %>
+                <li><a href="/bmi-calculator.html">Calculator</a></li>
+                <li><a href="#">Menu</a>
+                    <ul>
+                        <li><a href="/food_items/new">Enter food items</a></li>
+                        <li><a href="/blood_pressures/new">Enter blood pressure</a></li>
+                     </ul>
+                </li>
+                <li><a href="#">View</a>
+                    <ul>
+                        <li><a href="/food_items">Food Items</a></li>
+                        <li><a href="/meals">Meal Totals</a></li>
+                        <li><a href="/blood_pressures">Blood Pressure</a></li>
+                        <li><a href="/graphs">Data</a></li>
+                     </ul>
+                </li>
+                <li><a href="/logout">Log out</a></li>
+                <% else %>
+                <li><a href="/signup">Sign up</a></li>
+            
+                <li><a href="/login">Log in</a></li>
+                <% end %>
+            </ul>
+            </nav><!-- End Nav -->
+        </div>
+    </div><!-- End container -->
+</header> <!-- End header -->
+
+
+
 <!-- Jquery -->
 <script src="/js/jquery.1.7.2.min.js"></script>
 

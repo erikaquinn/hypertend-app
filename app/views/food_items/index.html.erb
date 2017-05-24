@@ -1,62 +1,6 @@
-<head>
-
-  <!-- Basic Page Needs -->
-  <meta charset="utf-8">
-  <title>hypertEND | Sodium Tracker</title>
-
-</head>
-<body>
-  <header>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4 col-xs-3">
-          <h1 id="logo">
-            <a href="/" title="hypertEND | Sodium Tracker">
-              hypertEND | Sodium Tracker
-            </a>
-          </h1>
-        </div>
-
-        <nav class="col-md-8 col-xs-9">
-          <ul id="main-nav" class="sf-menu">
-             <% if current_user %>
-                <li><a href="/logout">Logout</a></li>
-              <% else %>
-                <li><a href="/signup">Sign up</a></li>
-                <li><a href="/login">Login</a></li>
-              <% end %>
-
-            <li><a href="#">Training</a>
-              <ul>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Programs</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Calorie calculators</a>
-              <ul>
-                <li><a href="#">Daily calories</a></li>
-                <li><a href="#">Calories burned by heart rate</a></li>
-                <li><a href="#">Calories burned by activites</a></li>
-                <li><a href="#">BMI calculator</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Pages</a>
-              <ul>
-                <li><a href="#">Pricing</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Single post</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Purchase</a></li>
-          </ul>
-        </nav><!-- End Nav -->
-      </div>
-    </div><!-- End container -->
-  </header> <!-- End header -->
-
     <div class="container">
       <h3 class="title">Your daily meals:</h3>
+      <h4><a href="/food_items/new">Enter a new meal</a></h4>
           <form action="/meals">
           <input type="submit" value="View nutritional totals" />
           </form>
@@ -76,7 +20,7 @@
               <h5>Notes: <%= food_item.notes %></h5>
               <br>
           <% end %>
-          <h3><a href="/food_items/new">Enter a new meal</a></h3>
+          
 
         </div>
       </div>
