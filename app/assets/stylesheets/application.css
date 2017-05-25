@@ -15,3 +15,95 @@
 
  
  */
+
+label {
+  margin-left: 5px;
+    margin-right: 10px;
+}
+
+.inline-block {
+  display: inline-block !important;
+}
+
+.food-item {
+  width: 23%;
+  border: thin solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 8px 8px;
+  max-height: 400px;
+  background-color: ghostwhite;
+}
+
+.food-item h5 {
+  color: #515151;
+}
+
+.blood-pressure {
+  width: 23%;
+  border: thin solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 8px 8px;
+  max-height: 400px;
+  background-color: ghostwhite;
+}
+
+.blood-pressure h4 {
+  color: #515151;
+}
+
+.meal {
+  width: 31%;
+  border: thin solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 8px 8px;
+  max-height: 400px; 
+  background-color: ghostwhite; 
+}
+
+.meal h5 {
+  color: #515151;
+}
+
+.graph-row {
+  margin-bottom: 55px;
+}
+
+.h5-white {
+  color: #fff;
+}
+
+.sodium-total-graph {
+  background: white;
+  border: thin solid #ddd;
+  border-radius: 4px;
+  padding: 20px;
+  min-height: 408px;
+  width: 47%;
+  margin-right: 3%;
+}
+
+.sodium-percent-graph {
+  background: white;
+  border: thin solid #ddd;
+  border-radius: 4px;
+  padding: 20px;
+  width: 47%;
+  margin-left: 3%;
+}
+
+.blood-pressure-readings {
+  background: white;
+  border: thin solid #ddd;
+  border-radius: 4px;
+  padding: 20px;
+  width: 97%;
+  margin: auto;
+  display: block;
+}
+
+
+
+

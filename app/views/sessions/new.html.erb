@@ -44,22 +44,30 @@
 <![endif]-->
 
 </head>
+
 <div class="container">
 
   <h3 class="title">Log in</h3>
     <br>
       <div class="col-md-6">
         <%= form_tag "/login", method: :post do %>
-      <div class="form-bg-1">
-        Email:
-        <input type="email" name="email">
+          <div class="form-bg-1">
+            Email:
+            <input type="email" name="email">
+          </div>
+            <div class="form-bg-2">
+              Password:
+              <input type="password" name="password">
+            </div>
+      
+          <button id="selectBtn" class="button_medium add_top_30" input type="submit">Log In</button>
+          <% end %>
       </div>
-        <div class="form-bg-2">
-          Password:
-          <input type="password" name="password">
-        </div>
+</div>
+<div class="container">
+  <div class="row">
+  </div>
+</div>
 
-<button id="selectBtn" class="button_medium add_top_30" input type="submit">Log In</button>
-<% end %>
 
  

@@ -9,6 +9,16 @@ class FoodItemsController < ApplicationController
     render "index.html.erb" 
   end
 
+  def new
+    todays_meals = Meal.where("created_at >= ?", Time.zone.now.beginning_of_day)
+    @total_sodium = 0
+
+    todays_meals.each do |meal|
+      @total_sodium += meal.sodium_total
+    end
+
+  end
+
   def show
     food_item_id = params[:id]
     @food_item = FoodItem.find_by(id: food_item_id)

@@ -11,6 +11,7 @@ class BloodPressuresController < ApplicationController
   end
 
   def new
+    @last_blood_pressure = BloodPressure.last
     render "new.html.erb"
   end
 

@@ -2,39 +2,46 @@
     <h3 class="title">New Blood Pressure Reading:</h3>
   <div class="col-md-6">
       <%= form_tag "/blood_pressures", method: :post do %>
-    <div class="form-bg-1">
-        Systolic Number: <input type="number" class="form-control" name="systolic_number">
-      </div>
+        <div class="form-bg-1">
+          Systolic Number: <input type="number" class="form-control" name="systolic_number">
+        </div>
         <div class="form-bg-2">
           Diastolic Number: <input type="number" class="form-control" name="diastolic_number">
         </div>
-          <div class="form-bg-1">
-            Measurement arm: <br>
-            <input type="radio" name="measurement_arm" value="left"> left
-            <input type="radio" name="measurement_arm" value="right"> right
-          </div>
-            <div class="form-bg-2">
-              Heart Rate (bpm): <input type="number" class="form-control" name="bpm">
-            </div>
-              <div class="form-bg-1">
-                Weight (lbs): <input type="number" class="form-control" name="weight">
-              </div>
-                <div class="form-bg-2">
-                  Notes: <textarea name="notes" cols="30" rows="10" class="form-control" placeholder="Enter any notes here."></textarea>
-                </div>
-                <br>
-                  <button id="selectBtn" class="button_medium add_top_30" input type="submit">Add Blood Pressure</button>
-                  <% end %>
-                    <br>
-                      <h4><a href="/blood_pressures">Back to all blood pressure readings</a></h4>
-                        <br>
-                          <h4><a href="/food_items">Back to all food items</a></h4>
+        <div class="form-bg-1">
+          Measurement arm: <br>
+          <input id="left" type="radio" name="measurement_arm" value="left"> 
+          <label for="left">Left</label>
+
+          <input id=right type="radio" name="measurement_arm" value="right"> 
+          <label for="right">Right</label>
+        </div>
+        <div class="form-bg-2">
+          Heart Rate (bpm): <input type="number" class="form-control" name="bpm">
+        </div>
+        <div class="form-bg-1">
+          Weight (lbs): <input type="number" class="form-control" name="weight">
+        </div>
+        <div class="form-bg-2">
+          Notes: <textarea name="notes" cols="30" rows="10" class="form-control" placeholder="Enter any notes here."></textarea>
+        </div>
+        <br>
+        <button id="selectBtn" class="button_medium add_top_30" input type="submit">
+          Add Blood Pressure
+        </button>
+      <% end %>
+      <br>
+      <h4><a href="/blood_pressures">Back to all blood pressure readings</a></h4>
+      <br>
+      <h4><a href="/food_items">Back to all food items</a></h4>
   </div>
 
   <div class="col-md-5">
     <div class="result">
-      <h2>Your last blood pressure reading:</h2>
-        <div id="adv_calculator_value">0</div>
+      <h2 style="font-size: 20px">Your last blood pressure reading:</h2>
+        <div id="adv_calculator_value"   style="margin: 30px 0px;">
+          <%= @last_blood_pressure.systolic_number%> / <%= @last_blood_pressure.diastolic_number%>
+        </div>
     </div>   
   </div>
 

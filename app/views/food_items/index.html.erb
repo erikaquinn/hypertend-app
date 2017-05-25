@@ -1,38 +1,36 @@
-    <div class="container">
-      <h3 class="title">Your daily meals:</h3>
-      <h4><a href="/food_items/new">Enter a new meal</a></h4>
-          <form action="/meals">
-          <input type="submit" value="View nutritional totals" />
-          </form>
+<div class="container">
+  <h3 class="title">Your daily meals:</h3>
+  <h4><a href="/food_items/new">Enter a new meal</a></h4>
+  <h4><a href="/blood_pressures/new">Enter blood pressure</a></h4>
+      <form action="/meals">
+      <input type="submit" value="View nutritional totals" />
+      </form>
+      <br>
+  <div class="col-md-12">
+      <% @food_items.each do |food_item| %>
+        <div class="col-md-3 food-item">
+          <h4><a href="/food_items/<%= food_item.id %>"><%= food_item.description %></a></h4>
+          <h5 style="color:#8dc63f;">Added: <%= food_item.friendly_created_at %></h5>
+          <h3 style="color:#cd2a3c;">Sodium: <%= food_item.sodium %> mg</h3>
+          <h5>Calories: <%= food_item.calories %></h5>
+          <h5>Cholesterol: <%= food_item.cholesterol %> mg</h5>
+          <h5>Protein: <%= food_item.protein %> g</h5>
+          <h5>Potassium: <%= food_item.potassium %> mg</h5>
+          <h5>Sugars: <%= food_item.sugar %> g</h5>
           <br>
-      <div class="col-md-5">
-        <div class="row">
-          <% @food_items.each do |food_item| %>
-              <h4><a href="/food_items/<%= food_item.id %>"><%= food_item.description %></a></h4>
-              <h5>Added: <%= food_item.friendly_created_at %></h5>
-              <h5>Sodium: <%= food_item.sodium %> mg</h5>
-              <h5>Calories: <%= food_item.calories %></h5>
-              <h5>Cholesterol: <%= food_item.cholesterol %> mg</h5>
-              <h5>Protein: <%= food_item.protein %> g</h5>
-              <h5>Potassium: <%= food_item.potassium %> mg</h5>
-              <h5>Sugars: <%= food_item.sugar %> g</h5>
-              <br>
-              <h5>Notes: <%= food_item.notes %></h5>
-              <br>
-          <% end %>
-          
-
+          <h5>Notes: <%= food_item.notes %></h5>
+          <br>
         </div>
-      </div>
-    </div>
+      <% end %>
+  </div>
+</div>
 
-    <div id="toTop">Back to Top</div>  
+<div id="toTop">Back to Top</div>  
 
-      <div class="container">
-        <div class="row">
-        </div>
-      </div>
-</body>
+<div class="container">
+  <div class="row">
+  </div>
+</div>
 
 
 

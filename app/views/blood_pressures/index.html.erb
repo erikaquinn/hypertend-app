@@ -6,6 +6,7 @@
       <h2>BP Readings: </h2>
       <br>
       <h4><a href="/blood_pressures/new">Enter a new Blood Pressure reading</a></h4>
+      <h4><a href="/">Back to Home Page</a></h4>
       <br>
       <br>
   <div class="col-md-12">
@@ -47,30 +48,32 @@
           </div>    
       </div>
   </div>
-  <br>
-  <br>
+ 
   
-    <div class="row">
-      <% @blood_pressures.each do |blood_pressure| %>
-        <div class="col-md-6">
-          <h3><a href="/blood_pressures/<%= blood_pressure.id %>">
-          <h4><%= blood_pressure.friendly_created_at %></a></h4>
-          <h4><b>Date Added: <%= blood_pressure.friendly_created_at %></b></h4>
-          <h4>Systolic number: <%= blood_pressure.systolic_number %></h4>
-          <h4>Diastolic number: <%= blood_pressure.diastolic_number %></h4>
-          <h4>Heart Rate: <%= blood_pressure.bpm %> bpm</h4>
-          <h4>Weight: <%= blood_pressure.weight %> lbs</h4>
-          <br>
-          <h4>Notes: <%= blood_pressure.notes %></h4>
-          <br>
-        </div>
-      <% end %>
-    </div>
+  <div class="col-md-12">
+    <% @blood_pressures.each do |blood_pressure| %>
+      <div class="col-md-3 blood-pressure">
+        <h3><a href="/blood_pressures/<%= blood_pressure.id %>">
+        <h4><%= blood_pressure.friendly_created_at %></a></h4>
+        <h4 style="color:#8dc63f;">Systolic number: <%= blood_pressure.systolic_number %></h4>
+        <h4 style="color:#8dc63f;">Diastolic number: <%= blood_pressure.diastolic_number %></h4>
+        <h4>Heart Rate: <%= blood_pressure.bpm %> bpm</h4>
+        <h4>Weight: <%= blood_pressure.weight %> lbs</h4>
+        <h4>Arm: <%= blood_pressure.measurement_arm %></h4>
 
-      
-          <div class="row add_top_15">
-          </div>           
+        <br>
+        <h4>Notes: <%= blood_pressure.notes %></h4>
+        <br>
+      </div>
+    <% end %>
+  </div>
+         
 </div>
 
+<div id="toTop">Back to Top</div>  
 
+<div class="container">
+  <div class="row">
+  </div>
+</div>
 

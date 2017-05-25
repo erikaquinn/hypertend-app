@@ -3,50 +3,68 @@
   <h3 class="title">New Food Item</h3>
   <div class="col-md-6">
     <%= form_tag "/food_items", method: :post do %>
-      <div class="form-bg-1">
+      <div class="form-bg-1 food-type">
         Select your meal:<br>
-        <input type="radio" name="meal_name" value="Breakfast"> Breakfast
-        <input type="radio" name="meal_name" value="Lunch"> Lunch
-        <input type="radio" name="meal_name" value="Dinner"> Dinner
-        <input type="radio" name="meal_name" value="Snack"> Snack
+        <input id="breakfast" type="radio" name="meal_name" value="Breakfast"> 
+        <label for="breakfast">Breakfast</label>
+        
+        <input id="lunch" type="radio" name="meal_name" value="Lunch"> 
+        <label for="lunch">Lunch</label>
+        
+        <input id="dinner" type="radio" name="meal_name" value="Dinner"> 
+        <label for="dinner">Dinner</label>
+        
+        <input id="snack" type="radio" name="meal_name" value="Snack"> 
+        <label for="snack">Snack</label>
       </div>
-        <div class="form-bg-2">
-          Food Item: <input type="text" class="form-control" name="description" placeholder="What did you eat?">
-        </div>
-          <div class="form-bg-1">
-            Sodium (mg): <input type="number" class="form-control" name="sodium">
-          </div>
-            <div class="form-bg-2">
-              Calories: <input type="number" class="form-control" name="calories">
-            </div>
-              <div class="form-bg-1">
-                Cholesterol (mg): <input type="number" class="form-control" name="cholesterol">
-              </div>
-                <div class="form-bg-2">
-                  Protein (g): <input type="number" class="form-control" name="protein">
-                </div>
-                  <div class="form-bg-1">
-                    Potassium (mg): <input type="number" class="form-control" name="potassium">
-                  </div>
-                    <div class="form-bg-2">
-                      Sugar (g): <input type="number" class="form-control" name="sugar">
-                    </div>
-                      <div class="form-bg-1">
-                        Notes: <textarea name="notes" cols="30" rows="10" class="form-control" placeholder="Enter any notes here."></textarea>
-                      </div>
-                        <br>
-                          <button id="selectBtn" class="button_medium add_top_30" input type="submit">Add Food Item</button>
+
+      <div class="form-bg-2">
+        Food Item: <input type="text" class="form-control" name="description" placeholder="What did you eat?">
+      </div>
+
+      <div class="form-bg-1">
+        Sodium (mg): <input type="number" class="form-control" name="sodium">
+      </div>
+
+      <div class="form-bg-2">
+        Calories: <input type="number" class="form-control" name="calories">
+      </div>
+
+      <div class="form-bg-1">
+        Cholesterol (mg): <input type="number" class="form-control" name="cholesterol">
+      </div>
+
+      <div class="form-bg-2">
+        Protein (g): <input type="number" class="form-control" name="protein">
+      </div>
+
+      <div class="form-bg-1">
+        Potassium (mg): <input type="number" class="form-control" name="potassium">
+      </div>
+
+      <div class="form-bg-2">
+        Sugar (g): <input type="number" class="form-control" name="sugar">
+      </div>
+
+      <div class="form-bg-1">
+        Notes: <textarea name="notes" cols="30" rows="10" class="form-control" placeholder="Enter any notes here."></textarea>
+      </div>
+
+      <br>
+      <button id="selectBtn" class="button_medium add_top_30" input type="submit">
+        Add Food Item
+      </button>
     <% end %>
-                        <br>
-                        <h4><a href="/food_items">Back to all food items</a></h4>
+    <br>
+    <h4><a href="/food_items">Back to all food items</a></h4>
   </div>
 
-    <div class="col-md-5">
-      <div class="result">
-            <h2>Amount of Sodium consumed today:</h2>
-            <div id="adv_calculator_value">0</div>
-      </div>   
-    </div>
-      <div class="row add_top_15">
-      </div>
+  <div class="col-md-5 result">
+      <h2 style="font-size: 20px;">Amount of Sodium consumed today:</h2>
+      <div id="adv_calculator_value" style="margin: 38px 0px;"><%= @total_sodium %>mgs</div>
+      <h2 style="font-size: 20px;">daily recommended: 1,500 mgs </h2>
+  </div>
+
+  <div class="row add_top_15">
+  </div>
 </div>

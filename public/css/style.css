@@ -51,10 +51,17 @@ h2, h3, h4,h5 {
 	font-weight:300;
 	line-height:32px;
 }
-.result  h2{
+
+
+.result p {
 	font-size:16px;
 	margin-bottom:20px;
 }
+
+.result h1 {
+  font-size: 66px;
+}
+
 #indicator {
 	font-size:14px; margin-top:20px;
 }
@@ -287,15 +294,18 @@ footer .form-bg-1, footer .form-bg-2 {
 #activies.clearfix br {
 	clear:both;
 }
+
 .result {
-	background-color:#7accc8;
-	color:#fff;
-	text-align:center;
-	font-size:66px;
-	font-weight:800;
-	padding:50px 20px 60px 20px;
-	margin-bottom:30px;
+  background-color: #7accc8;
+  color: #fff;
+  text-align: center;
+  font-size: 66px;
+  font-weight: 800;
+  padding: 40px 20px 40px 20px;
+  margin-bottom: 30px;
 }
+
+
 .tips_box {
   background-color:#7accc8;
   color:#fff;

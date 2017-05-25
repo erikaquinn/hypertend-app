@@ -1,32 +1,22 @@
 <div class="container">
- <h3 class="title">Here is your data</h3>
-  <div class="col-md-6">
-          <h3>Sodium Totals for the Week</h3>
-          <p><%= @date_range %></p>
-          <br>
+  <h3 class="title">Data for the week of <%= @date_range %></h3>
+  <div class="col-md-12 inline-block graph-row">
+    <div class="col-md-6 sodium-total-graph">
+      <h3 align="center">Sodium Totals for Daily Meals</h3>
+  
+      <%= column_chart @user_meals, ytitle: "Sodium", xtitle: "Day of Week" %>
+    </div>
 
-          <%= column_chart @user_meals, ytitle: "Sodium", xtitle: "Day of Week" %>
-
-          <br>
+    <div class="col-md-6 sodium-percent-graph">
+      <h3 align="center">Percentage of Sodium Consumed this Week</h3>
+     
+      <%= pie_chart @pie_chart_data %>
+    </div>
   </div>
 
-    <div class="col-md-6">
-      <h3 align="center">Sodium Totals per Daily Meal</h3>
-          
-              <%= pie_chart Meal.where(user_id: current_user.id).group(:name).count %>
-        
-              <br>
-    </div>
-      <div class="row">
-        <div class="col-md-12">
-          <br>
-          <br>
-          <br>
-            <h3>Daily Blood Pressure Readings</h3>
-
-              <%= line_chart @bp_data.map { |hash|
-                  {name: hash[:name], data: hash[:data]}
-              }, ytitle: "mmHg", xtitle: "Day of Week" %> 
-        </div>             
-      </div>
+  <div class="col-md-12 graph-row blood-pressure-readings">
+    <h3 align="center">Daily Blood Pressure Readings</h3>
+ 
+    <%= line_chart @bp_data.map { |hash| {name: hash[:name], data: hash[:data]}}, ytitle: "mmHg", xtitle: "Day of Week" %> 
+  </div>             
 </div>

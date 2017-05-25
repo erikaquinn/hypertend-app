@@ -1,28 +1,28 @@
 <div class="container">
+  <h3 class="title">Meal Totals</h3>
+    <div class="col-md-12">
+      <h4><a href="/food_items">Back to food items</a></h4>
+      <h4><a href="/">Back to home page</a></h4>
+    </div>
 
-<h3 class="title">Meal Totals</h3>
-<!-- <div class="col-md-6"> -->
-
-<div class="row">
-    <% @meals.each do |meal| %>
+    <div class="col-md-12">
+      <% @meals.each do |meal| %>
+        <div class="col-md-4 meal">
           <h3><h4><a href="/meals/<%= meal.id %>"><%= meal.name %></a></h3>
-          <h4><b>Date Added: <%= meal.friendly_created_at %></b></h4>
-          <h4>Sodium Total: <%= meal.sodium_total %> mgs</h4>
+          <h4 style="color:#8dc63f;"><b>Date Added: <%= meal.friendly_created_at %></b></h4>
+          <h3 style="color:#cd2a3c;">Sodium Total: <%= meal.sodium_total %> mgs</h3>
           <h4>Calories Total: <%= meal.calories_total %></h4>
           <h4>Cholesterol Total: <%= meal.cholesterol_total %> mgs</h4>
           <h4>Protein Total: <%= meal.protein_total %> gs</h4>
           <h4>Potassium Total: <%= meal.potassium_total %> mgs</h4>
           <h4>Sugars Total: <%= meal.sugar_total%> gs</h4>
           <br>
-    <% end %>   
-       <!--  </div> -->
-      <!-- </div> -->
-<!-- </div> -->
-</div>
+        </div>
+      <% end %>
+    </div>
 
- <h4><a href="/">Back to food items</a></h4>
 </div>
 <div class="container">
-            <div class="row">
-  </div>
-  </div>
+    <div class="row">
+    </div>
+</div>

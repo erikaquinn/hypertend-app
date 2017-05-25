@@ -2060,12 +2060,12 @@ function calc_BMR() {
     if (0 >= b || 0 >= a || 0 >= c)
         return $("#indicator").text("Please complete the form!"), $("#bmr_value").text(""), -1;
     a = $("input[name=Male]").attr("checked") ? 66 + 13.7 * a + 5 * b - 6.8 * c : 655 + 9.6 * a + 1.8 * b - 4.7 * c;
-    0 >= a ? ($("#bmr_value").text(""), $("#indicator").text("No kidding.Did you input the right value")) : ($("#bmr_value").text(a.toFixed(2)), $("#indicator").text("See your customized data below:"));
+    0 >= a ? ($("#bmr_value").text(""), $("#indicator").text("No kidding. Did you input the right value")) : ($("#bmr_value").text(a.toFixed(2)), $("#indicator").text("See your customized data below:"));
     return a
 }
 function calc_BMI() {
     var a = "kilo" == $("[name=weight_select]").val() ? parseFloat($("[name=Weight]").val()) : 0.45359237 * parseFloat($("[name=Weight]").val()), b = "cm" == $("[name=height_select]").val() ? parseFloat($("[name=Height]").val()) : 2.54 * parseFloat($("[name=Height]").val());
-    0 == b ? ($("#bmi_value").text(""), $("#bmi_level").text(" "), $("#indicator").text("Please complete the form!")) : (a = 1E4 * a / (b * b), $("#bmi_value").text(a.toFixed(2)), 30 < a ? ($("#bmi_level").text("Obese"), $("#indicator").text("Ooops, your body are soooooo overweighted...")) : 25 < a ? ($("#bmi_level").text("Overweight"), $("#indicator").text("Ooops, your body are overweighted... ")) : 18.5 < a ? ($("#bmi_level").text("Normal"), $("#indicator").text("Congratulations, your body is in good conditions!")) : 16.5 < a ? ($("#bmi_level").text("Underweight"), $("#indicator").text("Seems you need more food...are you still on diet?")) : 0 < a ? ($("#bmi_level").text("Serverely Underweight"), $("#indicator").text("Don't stay in computer! You should stay in dinner desk!")) : ($("#bmi_value").text(""), $("#bmi_level").text(""), $("#indicator").text("Please complete the form!")))
+    0 == b ? ($("#bmi_value").text(""), $("#bmi_level").text(" "), $("#indicator").text("Please complete the form!")) : (a = 1E4 * a / (b * b), $("#bmi_value").text(a.toFixed(2)), 30 < a ? ($("#bmi_level").text("Obese"), $("#indicator").text("Ooops, your body is soooooo overweight...")) : 25 < a ? ($("#bmi_level").text("Overweight"), $("#indicator").text("Ooops, your body is overweight... ")) : 18.5 < a ? ($("#bmi_level").text("Normal"), $("#indicator").text("Congratulations, your body is in good condition!")) : 16.5 < a ? ($("#bmi_level").text("Underweight"), $("#indicator").text("Seems you need more food...are you still on a diet?")) : 0 < a ? ($("#bmi_level").text("Serverely Underweight"), $("#indicator").text("Don't stay on the computer! You should stay at the dinner table!")) : ($("#bmi_value").text(""), $("#bmi_level").text(""), $("#indicator").text("Please complete the form!")))
 }
 function calc_daily_calorie() {
     var a = calc_BMR();
