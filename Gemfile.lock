@@ -104,7 +104,7 @@ GEM
     rails (5.0.2)
       actioncable (= 5.0.2)
       actionmailer (= 5.0.2)
-      actionpack (= 5.0.2)
+      actionpack (= 5.2.4.3)
       actionview (= 5.0.2)
       activejob (= 5.0.2)
       activemodel (= 5.0.2)
